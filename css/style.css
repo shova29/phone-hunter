@@ -2,3 +2,6 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+.phone-bg-color {
+  background-color: rgba(150, 176, 192, 0.137);
+}

@@ -17,30 +17,41 @@
     <title>PhonePedia</title>
 </head>
 
-<body class="bg-transparent">
-    <h1 class="text-center text-info fw-bolder mt-5">PhonePedia PhoneTerest</h1>
-    <h3 class="text-center text-info fw-bolder mt-5">Search Your Phone Here</h3>
-    <!-- search phone input start-->
-    <div class="input-group mb-3 w-50 mx-auto mt-3">
-        <input id="search-field" type="text" class="form-control" placeholder="Search Your Favourite Phone"
-            aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button onclick="return searchPhone()" class="btn btn-outline-info fs-4 fw-bolder " type="button"
-            id="button-search">Search</button>
-    </div>
-    <!-- error message section start-->
-    <div>
+<body class="phone-bg-color">
+    <!-- header section start -->
+    <header>
+        <!-- title section start -->
+        <h1 class="text-center text-info fw-bolder mt-5">PhonePedia</h1>
+        <!-- title section end -->
+        <h3 class="text-center text-info fw-bolder mt-5">Search Your Phone Here</h3>
+        <!-- search phone input start-->
+        <div class="input-group mb-3 w-50 mx-auto mt-3">
+            <input id="search-field" type="text" class="form-control" placeholder="Search Your Favourite Phone"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="return searchPhone()" class="btn btn-outline-info fs-4 fw-bolder " type="button"
+                id="button-search">Search</button>
+        </div>
+        <!-- search phone input end -->
 
-        <p id="no-phone-found" class=" text-danger text-center fs-3 fw-bold mt-5">
-        </p>
-    </div>
+        <!-- error message section start-->
+        <div>
+            <p id="no-phone-found" class="text-danger text-center fs-3 fw-bold mt-5"></p>
+            <p id="error-message" class="text-danger text-center fs-3 fw-bold mt-5"></p>
+        </div>
+        <!-- error message section end-->
+    </header>
+    <!-- header section end -->
 
-    <div>
-        <p id="error-message" class=" text-danger text-center fs-3 fw-bold mt-5">
-        </p>
-    </div>
-    <!-- error message section end-->
-    
-    <!-- search phone input end -->
+    <!-- main section start -->
+    <main class="container">
+        <!-- phones search result start-->
+        <div id="search-result" class="row row-cols-1 row-cols-md-2 row-cols-md-3 g-5">
+
+        </div>
+        <!-- phones search result end-->
+    </main>
+    <!-- main section end -->
+
 
     <!-- Bootstrap script JS link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
