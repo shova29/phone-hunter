@@ -5,7 +5,6 @@ const searchPhone = () => {
   serachField.value = "";
   document.getElementById("error-message").style.display = "none";
   const noPhoneFound = document.getElementById("no-phone-found");
-  // let timeout;
   if (searchText === "") {
     // console.log(searchText);
     // spinner("block");
@@ -40,20 +39,6 @@ const searchPhone = () => {
   // spinner("none");
 };
 
-/* const displayErrorMessage = (errorMessage) => {
-  // toggleSpinner("none");
-  // toggleSearchResult("none");
-  const errorMessage = document.getElementById("error-message");
-  errorMessage.innerText = `No phone results have been found!`;
-  return true;
-}; */
-/* const displaynNoPhoneFound = (noPhoneFound) => {
-  // toggleSpinner("none");
-  // toggleSearchResult("none");
-  const noPhoneFound = document.getElementById("no-phone-found");
-  noPhoneFound.innerText = `Please write something to display`;
-  return true;
-}; */
 //Display Phone Info Card
 const displaySearchPhoneResult = (phones) => {
   spinner("block");
@@ -71,11 +56,6 @@ const displaySearchPhoneResult = (phones) => {
       errorMessage.innerText = `No phone results have been found!`;
       errorMessage.style.display = "block";
     }, 2000);
-    // const timeout = setTimeout(errorMessage, 10000);
-    // document.getElementById("error-message").style.display = "block";
-    // errorMessage.innerText = `No phone results have been found!`;
-    // // console.log(errorMessage);
-    // clearTimeout(timeout);
     document.getElementById("phone-container").innerHTML = "";
     return true;
   }
@@ -106,8 +86,6 @@ const displaySearchPhoneResult = (phones) => {
   }
 
   spinner("none");
-  // toggleSpinner("none");
-  // toggleSearchResult("block");
 };
 
 //Phone Details Load
@@ -125,24 +103,97 @@ const displayPhoneDetails = (phoneDetails) => {
   // phoneDetailsDiv.textContent = "";
   phoneDetailsDiv.innerHTML = `
   <div class="card h-100 shadow rounded-3">
-      <img src="${phoneDetails.image}" class="card-img-top mt-3 p-3 w-50 mx-auto" alt="${phoneDetails.name}">
+      <img src="${
+        phoneDetails.image
+      }" class="card-img-top mt-3 p-3 w-50 mx-auto" alt="${phoneDetails.name}">
       <div class="card-body">
           <h5 class="card-title">Phone Name: ${phoneDetails.name}</h5>
-          <p class="card-text"><span class="fw-bold"> Release Date: </span>${phoneDetails.releaseDate}</p>
-          <p class="card-text">Main Features</p><hr>
-         
-          <p class="card-text"><span class="fw-bold"> Storage: </span>${phoneDetails.mainFeatures.storage}</p>
-          <p class="card-text"><span class="fw-bold"> Display Size: </span>${phoneDetails.mainFeatures.displaySize}</p>
-          <p class="card-text"><span class="fw-bold"> Chip Set: </span>${phoneDetails.mainFeatures.chipSet}</p>
-          <p class="card-text"><span class="fw-bold"> Memory: </span>${phoneDetails.mainFeatures.memory}</p>
-          <p class="card-text"><span class="fw-bold"> Sensors: </span>${phoneDetails.mainFeatures.sensors[0]}, ${phoneDetails.mainFeatures.sensors[1]}, ${phoneDetails.mainFeatures.sensors[2]}, ${phoneDetails.mainFeatures.sensors[3]},${phoneDetails.mainFeatures.sensors[4]}, ${phoneDetails.mainFeatures.sensors[5]}</p>
-          <p class="card-text">Others</p><hr>
-          <p class="card-text"><span class="fw-bold"> WLAN: </span>${phoneDetails.others.WLAN}</p>
-          <p class="card-text"><span class="fw-bold"> Bluetooth: </span>${phoneDetails.others.Bluetooth}</p>
-          <p class="card-text"><span class="fw-bold"> GPS: </span>${phoneDetails.others.GPS}</p>
-          <p class="card-text"><span class="fw-bold"> NFC: </span>${phoneDetails.others.NFC}</p>
-          <p class="card-text"><span class="fw-bold"> Radio: </span>${phoneDetails.others.Radio}</p>
-          <p class="card-text"><span class="fw-bold"> USB: </span>${phoneDetails.others.USB}</p>
+          <p class="card-text"><span class="fw-bold"> Release Date: </span>
+          ${
+            phoneDetails.releaseDate
+              ? phoneDetails.releaseDate
+              : "Coming Soon..."
+          }</p>
+          <p class="card-text fw-bold">Main Features</p><hr>
+          <p class="card-text"><span class="fw-bold"> Storage: </span>${
+            phoneDetails.mainFeatures.storage
+          }</p>
+          <p class="card-text"><span class="fw-bold"> Display Size: </span>${
+            phoneDetails.mainFeatures.displaySize
+          }</p>
+          <p class="card-text"><span class="fw-bold"> Chip Set: </span>${
+            phoneDetails.mainFeatures.chipSet
+          }</p>
+          <p class="card-text"><span class="fw-bold"> Memory: </span>${
+            phoneDetails.mainFeatures.memory
+          }</p>
+          <p class="card-text"><span class="fw-bold"> Sensors: </span>
+          ${
+            phoneDetails.mainFeatures?.sensors[0]
+              ? phoneDetails.mainFeatures?.sensors[0]
+              : "No Sensor"
+          },   
+          ${
+            phoneDetails.mainFeatures?.sensors[1]
+              ? phoneDetails.mainFeatures?.sensors[1]
+              : "No Sensor"
+          },
+          ${
+            phoneDetails.mainFeatures?.sensors[2]
+              ? phoneDetails.mainFeatures?.sensors[2]
+              : "No Sensor"
+          },
+          ${
+            phoneDetails.mainFeatures?.sensors[3]
+              ? phoneDetails.mainFeatures?.sensors[3]
+              : "No Sensor"
+          },
+          ${
+            phoneDetails.mainFeatures?.sensors[4]
+              ? phoneDetails.mainFeatures?.sensors[4]
+              : "No Sensor"
+          },
+          ${
+            phoneDetails.mainFeatures?.sensors[5]
+              ? phoneDetails.mainFeatures?.sensors[5]
+              : "No Sensor"
+          }
+          </p>
+          <p class="card-text fw-bold">Others</p><hr>
+          <p class="card-text"><span class="fw-bold"> WLAN: </span>${
+            phoneDetails.others?.WLAN
+              ? phoneDetails.others?.WLAN
+              : "Not Available"
+          }</p>
+          <p class="card-text"><span class="fw-bold"> Bluetooth: </span>${
+            phoneDetails.others?.Bluetooth
+              ? phoneDetails.others?.Bluetooth
+              : "Not Available"
+          }</p>
+          <p class="card-text"><span class="fw-bold"> GPS: </span>${
+            phoneDetails.others?.GPS
+              ? phoneDetails.others?.GPS
+              : "Not Available"
+          }
+          </p>
+          <p class="card-text"><span class="fw-bold"> NFC: </span>${
+            phoneDetails.others?.NFC
+              ? phoneDetails.others?.NFC
+              : "Not Available"
+          }
+          </p>
+          <p class="card-text"><span class="fw-bold"> Radio: </span>${
+            phoneDetails.others?.Radio
+              ? phoneDetails.others?.Radio
+              : "Not Available"
+          }
+         </p>
+          <p class="card-text"><span class="fw-bold"> USB: </span>${
+            phoneDetails.others?.USB
+              ? phoneDetails.others?.USB
+              : "Not Available"
+          }
+          </p>
           </div>`;
   /* if (phoneDetails === 1) {
     document.getElementById("phone-details").innerHTML = "";
