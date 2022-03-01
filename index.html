@@ -21,29 +21,37 @@
     <!-- header section start -->
     <header>
         <!-- title section start -->
-        <h1 class="text-center text-info fw-bolder mt-5">PhonePedia</h1>
+        <h1 class="text-center text-info fw-bolder mt-5">PhonePedia <img src="./images/phone-icon-1.png" alt=""></h1>
         <!-- title section end -->
         <h3 class="text-center text-info fw-bolder mt-5">Search Your Phone Here</h3>
         <!-- search phone input start-->
-        <div class="input-group mb-3 w-50 mx-auto mt-3">
+        <div class="input-group w-50 mx-auto mt-3">
             <input id="search-field" type="text" class="form-control" placeholder="Search Your Favourite Phone"
                 aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button onclick="return searchPhone()" class="btn btn-outline-info fs-4 fw-bolder " type="button"
+            <button onclick="return searchPhone()" class="btn btn-outline-info fs-4 fw-bolder" type="button"
                 id="button-search">Search</button>
         </div>
         <!-- search phone input end -->
 
-        <!-- error message section start-->
+        <!-- loading error section start -->
         <div>
+            <!-- spinner -->
+            <img class="container justify-content-center img-fluid w-25 h-25 align-items-center" id="spinner"
+                src="./images/spinner.gif" alt="">
+            <!-- error message section start-->
             <p id="no-phone-found" class="text-danger text-center fs-3 fw-bold mt-5"></p>
             <p id="error-message" class="text-danger text-center fs-3 fw-bold mt-5"></p>
+
+            <!-- error message section end-->
         </div>
-        <!-- error message section end-->
+        <!-- loading error section start -->
     </header>
     <!-- header section end -->
 
     <!-- main section start -->
-    <main class="container">
+    <main id="phone-container" class="container mt-5">
+        <!-- search phone result start -->
+
         <!-- single phone details -->
         <div id="phone-details" class="w-50 mx-auto mb-5">
         </div>
@@ -56,6 +64,7 @@
         <div id="show-more-search-result" class="row row-cols-1 row-cols-md-2 row-cols-md-3 g-5">
 
         </div>
+        <!-- search phone result end -->
     </main>
     <!-- main section end -->
 
