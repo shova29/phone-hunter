@@ -40,7 +40,7 @@ const searchPhone = () => {
 };
 
 //Display Phone Info Card
-const displaySearchPhoneResult = (phones) => {
+let displaySearchPhoneResult = (phones) => {
   spinner("block");
   const searchResult = document.getElementById("search-result");
   searchResult.textContent = "";
@@ -55,12 +55,11 @@ const displaySearchPhoneResult = (phones) => {
       spinner("none");
       errorMessage.innerText = `No phone results have been found!`;
       errorMessage.style.display = "block";
-    }, 2000);
+    }, 1500);
     document.getElementById("phone-container").innerHTML = "";
     return true;
   }
   // console.log(phones.slice(0, 20));
-
   //phone found
   if (phones.length > 0) {
     setTimeout(() => {
@@ -78,14 +77,36 @@ const displaySearchPhoneResult = (phones) => {
                 <p class="card-text"><span class="fw-bold"> Brand Name: </span>${phone.brand}</p>
                 <button onclick="loadPhoneDetails('${phone.slug}')" class="btn btn-lg rounded btn-info text-white fw-bold">Details</button>
             </div>
-         </div>`;
+         </div> `;
         searchResult.appendChild(div);
       });
-    }, 2000);
+    }, 1500);
+
+    setTimeout(() => {
+      spinner("none");
+      const showMoreSearchResult = document.getElementById(
+        "show-more-search-result"
+      );
+      const showMoreDiv = document.createElement("div");
+      // showMoreDiv.classList.add("col");
+      showMoreDiv.style.fontSize = "16px";
+      showMoreDiv.innerHTML = `
+      <div class="mt-3"><button onclick="return showMorePhoneInfo()" class="btn btn-outline-info fs-4 fw-bolder" type="button" id="button-show-more">Show
+      More</button>
+      </div>
+      `;
+      showMoreSearchResult.appendChild(showMoreDiv);
+    }, 1500);
+
     return true;
   }
-
   spinner("none");
+};
+
+//Show More Phone Info Card
+const showMorePhoneInfo = () => {
+  // console.log("show more");
+  displaySearchPhoneResult();
 };
 
 //Phone Details Load
