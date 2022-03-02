@@ -1,21 +1,18 @@
+/* Google fonts link */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans&family=Poppins:wght@400;500&family=Roboto+Mono:ital,wght@0,100;1,400&display=swap");
 
 body {
   font-family: "Montserrat", sans-serif;
 }
-
-.phone-bg-color {
-  background-color: rgba(150, 176, 192, 0.137);
-}
-
+/* spinner */
 #spinner {
   display: none;
 }
-
+/* phone details */
 #phone-details {
   display: none;
 }
-
+/* show more button */
 #button-show-more {
   display: none;
 }

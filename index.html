@@ -16,32 +16,63 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>PhonePedia</title>
 </head>
+<!-- phone-bg-color -->
 
-<body class="phone-bg-color">
+<body>
     <!-- header section start -->
     <header>
+        <div>
+            <nav class="navbar navbar-expand-md navbar-dark bg-info">
+                <div class="container-fluid">
+                    <a class="container navbar-brand nav-logo ms-lg-5 ms-sm-5 fw-bold fs-2" href="#">PhonePedia
+                        <img src="./images/phone-icon-2.png" alt="" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div id="navbar-font" class="navbar-nav ms-auto">
+                            <a class="nav-link ms-3 me-3 text-white fs-5 fw-bold" href="#">Home</a>
+                            <a class="nav-link ms-3 me-3 text-white fs-5 fw-bold" href="#">About</a>
+                            <a class="nav-link ms-3 me-3 text-white fs-5 fw-bold" href="#">Feature</a>
+                            <a class="nav-link ms-3 me-5 text-white fs-5 fw-bold" href="#">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
         <!-- title section start -->
-        <h1 class="text-center text-info fw-bolder mt-5">PhonePedia <img src="./images/phone-icon-1.png" alt=""></h1>
+        <h1 class="text-center fw-bolder mt-5">Phone<span class="text-info">Pedia</span> <img
+                src="./images/phone-icon-1.png" alt="Phone Logo"></h1>
         <!-- title section end -->
-        <h3 class="text-center text-info fw-bolder mt-5">Search Your Phone Here</h3>
+        <h3 class="text-center fw-bolder mt-5"><span class="text-black">Search Your </span>
+            <span class="text-black">Phone</span> <span class="text-black">Here</span>
+        </h3>
         <!-- search phone input start-->
-        <div class="input-group w-50 mx-auto mt-3">
-            <input id="search-field" type="text" class="form-control" placeholder="Search Your Favourite Phone"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group w-50 mx-auto mt-5">
+            <input id="search-field" type="text" class="form-control"
+                placeholder="Search Phone(ex: samsung, iphone, oppo, huawei, etc.)" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
             <button onclick="return searchPhone()" class="btn btn-outline-info fs-4 fw-bolder" type="button"
                 id="button-search">Search</button>
         </div>
         <!-- search phone input end -->
 
         <!-- loading error section start -->
-        <div>
-            <!-- spinner -->
-            <img class="container justify-content-center img-fluid w-25 h-25 align-items-center" id="spinner"
-                src="./images/spinner.gif" alt="">
+        <!-- spinner -->
+
+        <!-- <div>
+            <img class="container mt-5 justify-content-center img-fluid w-25 h-25 align-items-center" id="spinner"
+                src="./images/spinner-2.gif" alt="">
+        </div> -->
+        <div id="error-section">
             <!-- error message section start-->
+            <img class="container mt-5 justify-content-center img-fluid w-25 h-25 align-items-center" id="spinner"
+                src="./images/spinner-2.gif" alt="">
             <p id="no-phone-found" class="text-danger text-center fs-3 fw-bold mt-5"></p>
             <p id="error-message" class="text-danger text-center fs-3 fw-bold mt-5"></p>
-
             <!-- error message section end-->
         </div>
         <!-- loading error section start -->
@@ -51,7 +82,6 @@
     <!-- main section start -->
     <main id="phone-container" class="container mt-5">
         <!-- search phone result start -->
-
         <!-- single phone details -->
         <div id="phone-details" class="w-50 mx-auto mb-5">
         </div>
@@ -61,17 +91,13 @@
         </div>
         <!-- phones search result end-->
         <!-- show more result start -->
-        <div class="mt-3"><button onclick="displaySearchPhoneResult(phones, searchResult)"
-                class="btn btn-outline-info fs-4 fw-bolder" type="button" id="button-show-more">Show
-                More</button>
-            <div id="show-more-search-result" class="row row-cols-1 row-cols-md-2 row-cols-md-3 g-5">
-
-            </div>
-            <!-- search phone result end -->
+        <div class="mt-4 mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-info btn-lg rounded-3 text-white fs-4 fw-bolder" type="button"
+                id="button-show-more">Show More
+            </button>
+        </div>
     </main>
     <!-- main section end -->
-
-
     <!-- Bootstrap script JS link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
