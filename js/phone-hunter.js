@@ -18,17 +18,6 @@ const searchPhone = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => getAllPhoneResult(data.data));
-    /* try {
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => getAllPhoneResult(data.data));
-    } catch (error) {
-      // const errorMessage = document.getElementById("error-message");
-      errorMessage.innerText = `No phone results have been found!`;
-      noPhoneFound("none");
-      document.getElementById("phone-container").innerHTML = "";
-      // return true;
-    } */
   }
 };
 //get all phones details
@@ -50,9 +39,7 @@ const getAllPhoneResult = (data) => {
         showMore("none");
       });
     }, 1000);
-  } /* else {
-    console.log("No more data");
-  } */
+  }
 };
 
 //Display Phone Info Card

@@ -16,11 +16,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>PhonePedia</title>
 </head>
-<!-- phone-bg-color -->
 
 <body>
     <!-- header section start -->
     <header>
+        <!-- navbar section start -->
         <div>
             <nav class="navbar navbar-expand-md navbar-dark bg-info">
                 <div class="container-fluid">
@@ -43,13 +43,12 @@
                 </div>
             </nav>
         </div>
+        <!-- navbar section end -->
         <!-- title section start -->
         <h1 class="text-center fw-bolder mt-5">Phone<span class="text-info">Pedia</span> <img
                 src="./images/phone-icon-1.png" alt="Phone Logo"></h1>
         <!-- title section end -->
-        <h3 class="text-center fw-bolder mt-5"><span class="text-black">Search Your </span>
-            <span class="text-black">Phone</span> <span class="text-black">Here</span>
-        </h3>
+        <h3 class="text-center fw-bold mt-5">Search Your Phone Here</h3>
         <!-- search phone input start-->
         <div class="input-group w-50 mx-auto mt-5">
             <input id="search-field" type="text" class="form-control"
@@ -61,16 +60,11 @@
         <!-- search phone input end -->
 
         <!-- loading error section start -->
-        <!-- spinner -->
-
-        <!-- <div>
-            <img class="container mt-5 justify-content-center img-fluid w-25 h-25 align-items-center" id="spinner"
-                src="./images/spinner-2.gif" alt="">
-        </div> -->
         <div id="error-section">
-            <!-- error message section start-->
+            <!-- spinner -->
             <img class="container mt-5 justify-content-center img-fluid w-25 h-25 align-items-center" id="spinner"
                 src="./images/spinner-2.gif" alt="">
+            <!-- error message section start-->
             <p id="no-phone-found" class="text-danger text-center fs-3 fw-bold mt-5"></p>
             <p id="error-message" class="text-danger text-center fs-3 fw-bold mt-5"></p>
             <!-- error message section end-->
@@ -107,7 +101,7 @@
         integrity="sha512-fzff82+8pzHnwA1mQ0dzz9/E0B+ZRizq08yZfya66INZBz86qKTCt9MLU0NCNIgaMJCgeyhujhasnFUsYMsi0Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- External Script JS link -->
-    <script src="./js/app.js"></script>
+    <script src="./js/phone-hunter.js"></script>
 </body>
 
 </html>
