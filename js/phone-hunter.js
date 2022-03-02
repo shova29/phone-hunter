@@ -1,3 +1,4 @@
+//loading data from API
 const searchPhone = () => {
   spinner("block");
   showMore("none");
