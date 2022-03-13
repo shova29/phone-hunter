@@ -16,3 +16,7 @@ body {
 #button-show-more {
   display: none;
 }
+/* show less button */
+#button-show-less {
+  display: none;
+}
